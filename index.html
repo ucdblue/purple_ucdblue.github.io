@@ -83,7 +83,7 @@
 				</div>
 			</div>
 			<div class="flex-w flex-c-m p-b-35 m-t-20">
-				<a href="https://goo.gl/forms/silkrLazugA7xqu33" onclick="ga('send', 'event', 'Google Link', 'Action label', 'Action Value');" class="size2 m1-txt1 flex-c-m how-btn1 trans-04">
+				<a href="https://goo.gl/forms/silkrLazugA7xqu33" onclick="trackOutboundLink('https://goo.gl/forms/silkrLazugA7xqu33'); return false;" class="size2 m1-txt1 flex-c-m how-btn1 trans-04">
 					Get Started
 				</a>
 			</div>
@@ -94,7 +94,7 @@
 			</a>
 
 		</div>
-		
+
 
 
 
@@ -153,6 +153,22 @@
 	</script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
+	<script>
+/**
+* Function that tracks a click on an outbound link in Analytics.
+* This function takes a valid URL string as an argument, and uses that URL string
+* as the event label. Setting the transport method to 'beacon' lets the hit be sent
+* using 'navigator.sendBeacon' in browser that support it.
+*/
+var trackOutboundLink = function(url) {
+  gtag('event', 'click', {
+    'event_category': 'interest',
+    'event_label': url,
+    'transport_type': 'beacon',
+    'event_callback': function(){document.location = url;}
+  });
+}
+</script>
 
 </body>
 </html>
