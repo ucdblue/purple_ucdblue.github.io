@@ -1,1 +1,1 @@
-# BLUEUCDAVIS.github.io
+BLUE @ UC Davis
