@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118263296-1"></script>
+
+
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-118263296-1', 'auto');
 
-  gtag('config', 'UA-118263296-1');
+// Replace the following lines with the plugins you want to use.
+
+ga('require', 'outboundLinkTracker', {
+  events: ['click', 'auxclick', 'contextmenu']
+});// ...
+
+ga('send', 'pageview');
 </script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src="js/autotrack.js"></script>
 
 
-	<title>BLUE - Coming Soon</title>
+
+
+
+	<title>BLUE</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -83,7 +93,7 @@
 				</div>
 			</div>
 			<div class="flex-w flex-c-m p-b-35 m-t-20">
-				<a href="https://goo.gl/forms/silkrLazugA7xqu33" onclick="trackOutboundLink('https://goo.gl/forms/silkrLazugA7xqu33'); return false;" class="size2 m1-txt1 flex-c-m how-btn1 trans-04">
+				<a href="https://docs.google.com/forms/d/e/1FAIpQLScXDQUB4VngZLLVz22n3RVZBAYkgpktvIlsTajfZy8koV3i5w/viewform" onclick="trackOutboundLink('https://docs.google.com/forms/d/e/1FAIpQLScXDQUB4VngZLLVz22n3RVZBAYkgpktvIlsTajfZy8koV3i5w/viewform'); return false;" class="size2 m1-txt1 flex-c-m how-btn1 trans-04">
 					Get Started
 				</a>
 			</div>
@@ -160,14 +170,24 @@
 * as the event label. Setting the transport method to 'beacon' lets the hit be sent
 * using 'navigator.sendBeacon' in browser that support it.
 */
-var trackOutboundLink = function(url) {
+/**var trackOutboundLink = function(url) {
   gtag('event', 'click', {
     'event_category': 'interest',
     'event_label': url,
     'transport_type': 'beacon',
     'event_callback': function(){document.location = url;}
   });
+}*/
+
+function handleOutboundLinkClicks(event) {
+  ga('send', 'event', {
+    eventCategory: 'Outbound Link',
+    eventAction: 'click',
+    eventLabel: event.target.href,
+    transport: 'beacon'
+  });
 }
+
 </script>
 
 </body>
