@@ -100,11 +100,11 @@ Primary use:
 [ L-Text >= 26 ]*/
 .l1-txt1 {
   font-family: Poppins-Thin;
-  font-size: 72px;
+  font-size: 50px;
   line-height: 1.1;
   color: rgba(255,255,255,0.5);
   text-transform: uppercase;
-  letter-spacing: 15px;
+  letter-spacing: 7px;
 }
 
 .l1-txt2 {
