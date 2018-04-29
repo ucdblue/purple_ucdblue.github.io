@@ -47,15 +47,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<a href="http://ucdblue.me"><img src="images/icons/logo.png" alt="LOGO"></a>
 			</div>
 
-			<!--
-			<div class="flex-w m-t-10 m-b-10">
-				<a href="#" class="size2 m1-txt1 flex-c-m how-btn1 trans-04">
-					Get Started
-				</a>
-			</div>
-		</div> -->
-
-		<!--  -->
 		<div class="flex-col-c-m p-l-15 p-r-15 p-t-50 p-b-120">
 			<h3 class="l1-txt1 txt-center p-b-40 respon1">
 				Want to quickly save money by borrowing 
@@ -96,27 +87,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			</a>
 
 		</div>
-
-
-
-
-		<!--  -->
-	
-
-			<!--<a href="#" class="size3 flex-c-m how-social trans-04 m-r-3 m-l-3 m-b-5">
-				<i class="fa fa-twitter"></i>
-			</a>
-
-			<a href="#" class="size3 flex-c-m how-social trans-04 m-r-3 m-l-3 m-b-5">
-				<i class="fa fa-youtube-play"></i>
-				-->
-			</a>
+		</a>
 		</div>
 	</div>
-
-
-
-	
 
 <!--===============================================================================================-->	
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
@@ -156,20 +129,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
 	<script>
-/**
-* Function that tracks a click on an outbound link in Analytics.
-* This function takes a valid URL string as an argument, and uses that URL string
-* as the event label. Setting the transport method to 'beacon' lets the hit be sent
-* using 'navigator.sendBeacon' in browser that support it.
-*/
-/**var trackOutboundLink = function(url) {
-  gtag('event', 'click', {
-    'event_category': 'interest',
-    'event_label': url,
-    'transport_type': 'beacon',
-    'event_callback': function(){document.location = url;}
-  });
-}*/
 
 function handleOutboundLinkClicks(event) {
   ga('send', 'event', {
